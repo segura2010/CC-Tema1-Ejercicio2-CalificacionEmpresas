@@ -36,7 +36,7 @@ describe('Empresa', function() {
 describe('Usuario', function() {
   describe('Crea', function () {
     it('Debe crear al usuario correctamente', function (done) {
-    	Usuario.add("usuariotest", function(err, result){
+    	Usuario.add("usuariotest", "password", function(err, result){
     		assert.equal(result.nombreusuario, "usuariotest", "Creado");
         done();
     	});
@@ -65,6 +65,13 @@ describe('Peticiones', function() {
     it('Borrar Empresa', function (done) {
         request(app)
           .delete('/empresa/empresadeprueba')
+          .expect(200, done);
+    });
+  });
+  describe('GET', function () {
+    it('Obtener Empresas', function (done) {
+        request(app)
+          .get('/empresas/')
           .expect(200, done);
     });
   });
