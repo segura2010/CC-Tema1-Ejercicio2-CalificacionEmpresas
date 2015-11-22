@@ -2,7 +2,10 @@
 // DB Libs 
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/p1ej2');
+
+var MONGODB = process.env.MONGODB || "localhost:27017/p1ej2";
+
+var db = monk(MONGODB);
 
 var empresas = db.get("empresas");
 var usuarios = db.get("usuarios");
