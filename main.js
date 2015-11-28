@@ -102,6 +102,10 @@ app.get('/empresas', function(request, response) {
 	});
 });
 
+app.get('/', function(request, response) {
+	response.send("<h1>Bienvenido, amijo!</h1><br><a href='/empresas'>Lista de Empresas (REST)</a>");
+});
+
 app.listen(PORT, function() {
   console.log("Node app is running at localhost:" + PORT);
 });
