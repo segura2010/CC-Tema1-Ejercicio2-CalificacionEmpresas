@@ -103,7 +103,7 @@ app.get('/empresas', function(request, response) {
 });
 
 app.get('/', function(request, response) {
-	response.send("<h1>Bienvenido, amijo!</h1><br><a href='/empresas'>Lista de Empresas (REST)</a>");
+	response.send("<h1>Bienvenido, amijo!</h1><br><a href='/empresas'>Lista de Empresas (REST)</a><br><br><i>CC</i>");
 });
 
 app.listen(PORT, function() {
